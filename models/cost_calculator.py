@@ -66,7 +66,10 @@ class DavisBaconCalculator:
         labor_cost = construction_cost * self.labor_share
 
         # Step 3: Calculate wage increase from Davis-Bacon
-        wage_increase = labor_cost * self.wage_premium
+        # Davis-Bacon acts as a wage FLOOR - it can only raise wages, never lower them.
+        # If the floor is below market wages (negative premium), there is no cost impact.
+        effective_premium = max(0, self.wage_premium)
+        wage_increase = labor_cost * effective_premium
 
         # Step 4: Calculate new home price
         new_home_price = self.home_price + wage_increase
