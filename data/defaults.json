@@ -1,0 +1,126 @@
+{
+  "parameters": {
+    "home_price": {
+      "value": 665298,
+      "unit": "USD",
+      "source": "NAHB Cost of Constructing a Home 2024",
+      "url": "https://eyeonhousing.org/2025/01/cost-of-constructing-a-home-in-2024/",
+      "notes": "Average sales price for newly built single-family home in 2024"
+    },
+    "construction_cost_share": {
+      "value": 0.644,
+      "unit": "fraction",
+      "source": "NAHB Cost of Constructing a Home 2024",
+      "url": "https://eyeonhousing.org/2025/01/cost-of-constructing-a-home-in-2024/",
+      "notes": "Record high since research began in 1998"
+    },
+    "labor_share": {
+      "value": 0.40,
+      "unit": "fraction",
+      "range": [0.30, 0.50],
+      "source": "Multiple sources",
+      "notes": "Varies by project type. New construction 30-50%, renovations can be higher (60-70%)"
+    },
+    "wage_premium_national_avg": {
+      "value": 0.15,
+      "unit": "fraction",
+      "source": "DOL methodology studies",
+      "notes": "Average Davis-Bacon premium over BLS OES wages"
+    }
+  },
+  "scenarios": {
+    "national_average": {
+      "labor_share": 0.40,
+      "wage_premium": 0.15,
+      "source": "DOL methodology studies",
+      "description": "Based on average DOL wage determination premium of ~13-15%"
+    },
+    "right_to_work": {
+      "labor_share": 0.35,
+      "wage_premium": -0.08,
+      "source": "AGM Financial 2024",
+      "url": "https://www.agmfinancial.com/how-davis-bacon-wages-impact-multifamily-construction-enlightening-new-research/",
+      "description": "Davis-Bacon wages often 8-24% below market in right-to-work states"
+    },
+    "high_union_metro": {
+      "labor_share": 0.45,
+      "wage_premium": 0.35,
+      "source": "Center for Government Research (NY study)",
+      "description": "Premium up to 36% in heavily unionized metro regions like NYC"
+    },
+    "moderate_premium": {
+      "labor_share": 0.40,
+      "wage_premium": 0.20,
+      "source": "Beacon Hill Institute",
+      "url": "https://www.abc.org/Portals/1/ABC%20Prevailing%20Wage%20Davis%20Bacon%20Studies%20Summary%20Updated%20March%202022%20031122.pdf",
+      "description": "Beacon Hill estimate of 20-22% wage premium over BLS averages"
+    },
+    "conservative": {
+      "labor_share": 0.30,
+      "wage_premium": 0.07,
+      "source": "Beacon Hill Institute (cost impact)",
+      "description": "Lower bound estimate: 7.2% construction cost impact"
+    },
+    "high_impact": {
+      "labor_share": 0.50,
+      "wage_premium": 0.40,
+      "source": "Combined upper estimates",
+      "description": "Upper bound for sensitivity analysis"
+    }
+  },
+  "sources": {
+    "nahb_2024": {
+      "title": "Cost of Constructing a Home in 2024",
+      "organization": "National Association of Home Builders",
+      "url": "https://eyeonhousing.org/2025/01/cost-of-constructing-a-home-in-2024/",
+      "date": "January 2025",
+      "key_findings": [
+        "Construction costs = 64.4% of home sale price (record high)",
+        "Average home sales price = $665,298",
+        "Labor costs embedded in each construction stage"
+      ]
+    },
+    "agm_financial": {
+      "title": "How Davis Bacon Wages Impact Multifamily Construction",
+      "organization": "AGM Financial Services",
+      "url": "https://www.agmfinancial.com/how-davis-bacon-wages-impact-multifamily-construction-enlightening-new-research/",
+      "date": "February 2024",
+      "key_findings": [
+        "In right-to-work states, DB wages 8.5% lower on average",
+        "Excluding Detroit/Milwaukee, DB wages 23.6% lower than market",
+        "In heavily unionized states, DB wages above market averages"
+      ]
+    },
+    "beacon_hill": {
+      "title": "Davis-Bacon Act Studies Summary",
+      "organization": "Associated Builders and Contractors",
+      "url": "https://www.abc.org/Portals/1/ABC%20Prevailing%20Wage%20Davis%20Bacon%20Studies%20Summary%20Updated%20March%202022%20031122.pdf",
+      "date": "March 2022",
+      "key_findings": [
+        "DOL wages 20-22% above BLS average wages",
+        "Adds 7.2% to federal construction costs",
+        "Estimated $8.6 billion/year in added costs"
+      ]
+    },
+    "epi": {
+      "title": "Prevailing Wages and Government Contracting Costs",
+      "organization": "Economic Policy Institute",
+      "url": "https://www.epi.org/publication/bp215/",
+      "key_findings": [
+        "78% of peer-reviewed studies show no cost increase",
+        "Prevailing wages may improve productivity",
+        "Reduced training and turnover costs offset wage premium"
+      ]
+    },
+    "construction_physics": {
+      "title": "Construction Cost Breakdown and Partial Industrialization",
+      "organization": "Construction Physics (Substack)",
+      "url": "https://www.construction-physics.com/p/construction-cost-breakdown-and-partial",
+      "key_findings": [
+        "Labor ~50% of direct construction costs",
+        "Prefabricated items: 10-20% labor fraction",
+        "On-site work (framing, concrete): 60-70% labor fraction"
+      ]
+    }
+  }
+}
